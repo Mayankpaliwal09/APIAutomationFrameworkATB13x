@@ -78,10 +78,10 @@ Certainly! I'll guide you through the steps to install Allure and generate a rep
 
 #### 1. Install Allure
 
-First, you need to install Allure Command Line Tool. If you're using a Mac, you can use the following Brew command:
+First, you need to install Allure Command Line Tool. If you're using a windows, you can use the following npm command:
 
 ```
-brew install allure
+npm install -g allure-commandline
 ```
 
 For other operating systems, please refer to the official Allure documentation for installation instructions.
