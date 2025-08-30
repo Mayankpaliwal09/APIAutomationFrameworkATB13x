@@ -4,9 +4,9 @@ public class Booking {
 
     private String firstname;
     private String lastname;
-    private String totalprice;
-    private String depositpaid;
-    private String bookingdates;
+    private Integer totalprice;
+    private Boolean depositpaid;
+    private BookingDates bookingdates;
     private String additionalneeds;
 
     public String getFirstname() {
@@ -25,27 +25,27 @@ public class Booking {
         this.lastname = lastname;
     }
 
-    public String getTotalprice() {
+    public Integer getTotalprice() {
         return totalprice;
     }
 
-    public void setTotalprice(String totalprice) {
+    public void setTotalprice(Integer totalprice) {
         this.totalprice = totalprice;
     }
 
-    public String getDepositpaid() {
+    public Boolean getDepositpaid() {
         return depositpaid;
     }
 
-    public void setDepositpaid(String depositpaid) {
+    public void setDepositpaid(Boolean depositpaid) {
         this.depositpaid = depositpaid;
     }
 
-    public String getBookingdates() {
+    public BookingDates getBookingdates() {
         return bookingdates;
     }
 
-    public void setBookingdates(String bookingdates) {
+    public void setBookingdates(BookingDates bookingdates) {
         this.bookingdates = bookingdates;
     }
 
