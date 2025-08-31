@@ -1,4 +1,4 @@
-package com.mayankPaliwal.Pojos.responsePOJO.appVWO;
+package com.mayankPaliwal.Pojos.responsePOJO.appVWO.reponsePOJO;
 
 public class InvalidLoginResponse{
 	private String message;

@@ -2,7 +2,8 @@ package com.mayankPaliwal.base;
 
 import com.mayankPaliwal.APIendpoints.APIConstants;
 import com.mayankPaliwal.asserts.AssertActions;
-import com.mayankPaliwal.modules.PayloadManager;
+import com.mayankPaliwal.modules.restfulBooker.PayloadManager;
+import com.mayankPaliwal.modules.VWO.VWOPayloadManager;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
@@ -25,6 +26,7 @@ public class BaseTest {
 
     public AssertActions assertActions;
     public PayloadManager payloadManager;
+    public VWOPayloadManager vwoPayloadManager;
     public JsonPath jsonPath;
 
 
@@ -32,11 +34,12 @@ public class BaseTest {
     public void setup(){
         System.out.println("Starting of the test");
         payloadManager = new PayloadManager();
+        vwoPayloadManager = new VWOPayloadManager();
         assertActions = new AssertActions();
 
-        requestSpecification = RestAssured.given();
-        requestSpecification.baseUri(APIConstants.BASE_URL);
-        requestSpecification.contentType(ContentType.JSON).log().all();
+//        requestSpecification = RestAssured.given();
+//        requestSpecification.baseUri(APIConstants.BASE_URL);
+//        requestSpecification.contentType(ContentType.JSON).log().all();
 
 
         // alternate way to do above thing
@@ -52,6 +55,20 @@ public class BaseTest {
         System.out.println("Finished the test");
     }
 
+
+    public String getToken(){
+        requestSpecification = RestAssured.given();
+        requestSpecification.baseUri(APIConstants.BASE_URL)
+                .basePath(APIConstants.AUTH_URL);
+
+        //setting payload
+
+        String payload = payloadManager.setAuthPayload();
+
+        response = requestSpecification.contentType(ContentType.JSON).body(payload).when().post();
+        String token = payloadManager.getTokenFromJson(response.asString());
+        return token;
+    }
 
 
 

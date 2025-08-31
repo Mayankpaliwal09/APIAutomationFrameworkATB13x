@@ -1,16 +1,18 @@
 package com.mayankPaliwal.Pojos.requestPOJO.appVWO;
 
+import com.mayankPaliwal.Pojos.requestPOJO.restfulBooker.Booking;
+
 public class VWOLoginRequest{
-	private String remember;
+	private boolean remember;
 	private String password;
 	private String recaptchaResponseField;
 	private String username;
 
-	public void setRemember(String remember){
+	public void setRemember(boolean remember){
 		this.remember = remember;
 	}
 
-	public String getRemember(){
+	public boolean getRemember(){
 		return remember;
 	}
 
