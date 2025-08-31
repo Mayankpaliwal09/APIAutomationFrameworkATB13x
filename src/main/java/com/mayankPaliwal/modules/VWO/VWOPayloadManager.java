@@ -13,8 +13,8 @@ public class VWOPayloadManager {
     public String setLoginDataValid(){
 
         VWOLoginRequest loginRequest = new VWOLoginRequest();
-        loginRequest.setUsername("20010041034@gateway.edu.in");
-        loginRequest.setPassword("Paliwal@2609");
+        loginRequest.setUsername("20010041034@gateway");
+        loginRequest.setPassword("xxx");
         loginRequest.setRemember(false);
         loginRequest.setRecaptchaResponseField("");
 
